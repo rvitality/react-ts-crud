@@ -1,0 +1,111 @@
+@import "./styles/mixins.scss";
+
+.app {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.cover {
+    height: 50vh;
+    background: rgb(2, 0, 36);
+
+    background-image: linear-gradient(120deg, rgba(174, 108, 242, 0.6), rgba(115, 153, 244, 0.6)),
+        url(https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 30rem;
+    margin: -15rem auto 0 auto;
+
+    h1 {
+        color: #fff;
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+
+    input[type="checkbox"] {
+        transform: scale(1.25);
+    }
+
+    input[type="checkbox"]:checked + .to-do {
+        text-decoration: line-through;
+        color: #888;
+    }
+
+    .title {
+        width: 100%;
+        padding: 0.85rem;
+        border: none;
+        font-size: 1.1rem;
+    }
+
+    .actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+}
+
+.list {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 0.4rem;
+    background-color: #fff;
+    max-height: 50vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 4px; /* width of the entire scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+        background: #ccc; /* color of the tracking area */
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #555; /* color of the scroll thumb */
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.25);
+    }
+
+    input[type="checkbox"]:checked + span {
+        text-decoration: line-through;
+        color: #888;
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .info {
+        display: flex;
+        gap: 1.7rem;
+        color: #333;
+    }
+
+    .actions {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+
+        button {
+            transition: all 0.15s ease-in-out;
+        }
+    }
+}
